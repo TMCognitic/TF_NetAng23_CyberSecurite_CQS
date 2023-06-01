@@ -4,6 +4,7 @@ using DemoCyberSecurite.Api.Domain.Queries;
 using DemoCyberSecurite.Api.Domain.Repositories;
 using DemoCyberSecurite.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using Tools.Encryption;
 
 namespace DemoCyberSecurite.Api.Controllers
 {
@@ -12,10 +13,12 @@ namespace DemoCyberSecurite.Api.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthRepository _authRepository;
+        private readonly RSAEncryptorTool _encryptorTool;
 
-        public AuthController(IAuthRepository authRepository)
+        public AuthController(IAuthRepository authRepository, RSAEncryptorTool encryptorTool)
         {
             _authRepository = authRepository;
+            _encryptorTool = encryptorTool;
         }
 
         [HttpPost("Enregistrer")]
@@ -23,7 +26,7 @@ namespace DemoCyberSecurite.Api.Controllers
         {
             try
             {
-                _authRepository.Handle(new EnregistrementCommand(dto.Nom, dto.Prenom, dto.Email, dto.Passwd));
+                _authRepository.Handle(new EnregistrementCommand(dto.Nom, dto.Prenom, dto.Email, _encryptorTool.Decrypt(dto.Passwd)));
                 return NoContent();
             }
             catch (Exception ex)

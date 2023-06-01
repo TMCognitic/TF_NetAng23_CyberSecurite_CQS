@@ -1,7 +1,9 @@
+using DemoCyberSecurite.Api.Properties;
 using DemoCyberSecurite.Api.Domain.Repositories; 
 using DemoCyberSecurite.Api.Domain.Services;
 using System.Data;
 using System.Data.SqlClient;
+using Tools.Encryption;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = builder.Configuration;
@@ -13,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDbConnection>(sp => new SqlConnection(configuration.GetConnectionString("default")));
 builder.Services.AddScoped<IAuthRepository, AuthService>();
-
+builder.Services.AddSingleton(new RSAEncryptorTool(Resources.Keys));
 
 
 var app = builder.Build();

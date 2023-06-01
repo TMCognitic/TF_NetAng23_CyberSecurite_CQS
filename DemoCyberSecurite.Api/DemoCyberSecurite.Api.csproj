@@ -7,12 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Keys\**" />
+    <Content Remove="Keys\**" />
+    <EmbeddedResource Remove="Keys\**" />
+    <None Remove="Keys\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DemoCyberSecurite.Api.Domain\DemoCyberSecurite.Api.Domain.csproj" />
+    <ProjectReference Include="..\Tools.Encryption\Tools.Encryption.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

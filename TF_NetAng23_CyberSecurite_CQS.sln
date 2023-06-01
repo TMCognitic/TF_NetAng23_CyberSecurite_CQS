@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Database", "Tools.Dat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0EDB8B83-3086-4D61-90C7-979F7E000D50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCyberSecurite.Api.Domain", "DemoCyberSecurite.Api.Domain\DemoCyberSecurite.Api.Domain.csproj", "{43866704-87B0-42B3-BC48-3E6156AD469A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCyberSecurite.Api.Domain", "DemoCyberSecurite.Api.Domain\DemoCyberSecurite.Api.Domain.csproj", "{43866704-87B0-42B3-BC48-3E6156AD469A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Encryption", "Tools.Encryption\Tools.Encryption.csproj", "{2783511E-9CCB-48C2-B678-896D912F94CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{43866704-87B0-42B3-BC48-3E6156AD469A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43866704-87B0-42B3-BC48-3E6156AD469A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43866704-87B0-42B3-BC48-3E6156AD469A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2783511E-9CCB-48C2-B678-896D912F94CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2783511E-9CCB-48C2-B678-896D912F94CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2783511E-9CCB-48C2-B678-896D912F94CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2783511E-9CCB-48C2-B678-896D912F94CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{76016386-64BC-4187-8205-BBDBE3D3F247} = {04149E39-9547-4A40-870B-91E4B25F5784}
 		{0EDB8B83-3086-4D61-90C7-979F7E000D50} = {5E5B9607-5F9C-45B1-AF6E-88CD8CCA4B62}
 		{43866704-87B0-42B3-BC48-3E6156AD469A} = {0EDB8B83-3086-4D61-90C7-979F7E000D50}
+		{2783511E-9CCB-48C2-B678-896D912F94CF} = {04149E39-9547-4A40-870B-91E4B25F5784}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC9985CD-3F90-4629-A786-F74E9843AFCC}
