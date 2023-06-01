@@ -9,7 +9,6 @@ namespace DemoCyberSecurite.Api.Dtos
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        [StringLength(20, MinimumLength = 8)]
         public string Passwd { get; set; }
     }
 }

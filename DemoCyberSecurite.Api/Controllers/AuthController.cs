@@ -44,7 +44,7 @@ namespace DemoCyberSecurite.Api.Controllers
         {
             try
             {                
-                Utilisateur? utilisateur = _authRepository.Handle(new AuthentifierQuery(dto.Email, dto.Passwd));
+                Utilisateur? utilisateur = _authRepository.Handle(new AuthentifierQuery(dto.Email, _encryptorTool.Decrypt(dto.Passwd)));
 
                 if (utilisateur is null)
                 {
